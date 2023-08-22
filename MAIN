@@ -1,0 +1,786 @@
+-- press Z to use all c4's. after dropping 1 load of c4 you need to unequip the equipped c4 then press Z again. keep doing this.
+--wait for all other tools except c4 to be cleared from your inventory BEFORE pressing Z for less lag
+--credit to og gui creator (whoever u are)
+ 
+local MainGui = {
+    MainGui = Instance.new("ScreenGui"),
+    MainFrame = Instance.new("Frame"),
+    Text1 = Instance.new("TextLabel"),
+    Text2 = Instance.new("TextLabel"),
+    UICorner = Instance.new("UICorner"),
+    Text3 = Instance.new("TextLabel"),
+    Text4 = Instance.new("TextLabel"),
+    Box1 = Instance.new("TextBox"),
+    Box2 = Instance.new("TextBox"),
+    Text5 = Instance.new("TextLabel"),
+    Text6 = Instance.new("TextLabel"),
+    Button1 = Instance.new("TextButton"),
+    UICorner_2 = Instance.new("UICorner"),
+    Box3 = Instance.new("TextBox"),
+    Box4 = Instance.new("TextBox"),
+    Invite = Instance.new("TextBox"),
+};
+ 
+MainGui.MainGui.Name = "MainGui";
+MainGui.MainGui.Enabled = true;
+MainGui.MainGui.DisplayOrder = 0;
+MainGui.MainGui.ResetOnSpawn = true;
+MainGui.MainGui.IgnoreGuiInset = false;
+MainGui.MainGui.Archivable = true;
+MainGui.MainGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+MainGui.MainGui.Parent = game:GetService("CoreGui");
+ 
+MainGui.MainFrame.Name = "MainFrame";
+MainGui.MainFrame.LayoutOrder = 0;
+MainGui.MainFrame.Active = false;
+MainGui.MainFrame.Selectable = false;
+MainGui.MainFrame.AnchorPoint = Vector2.new(0, 0);
+MainGui.MainFrame.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.MainFrame.ZIndex = 1;
+MainGui.MainFrame.Archivable = true;
+MainGui.MainFrame.Size = UDim2.new(0, 246, 0, 227);
+MainGui.MainFrame.NextSelectionUp = nil;
+MainGui.MainFrame.NextSelectionRight = nil;
+MainGui.MainFrame.NextSelectionLeft = nil;
+MainGui.MainFrame.ClipsDescendants = false;
+MainGui.MainFrame.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.MainFrame.NextSelectionDown = nil;
+MainGui.MainFrame.Visible = true;
+MainGui.MainFrame.Style = Enum.FrameStyle.Custom;
+MainGui.MainFrame.Rotation = 0;
+MainGui.MainFrame.SelectionImageObject = nil;
+MainGui.MainFrame.Position = UDim2.new(0.005859375, 0, 0.36930859088897705, 0);
+MainGui.MainFrame.BorderSizePixel = 1;
+MainGui.MainFrame.BorderMode = Enum.BorderMode.Outline;
+MainGui.MainFrame.BackgroundTransparency = 0;
+MainGui.MainFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35);
+MainGui.MainFrame.Parent = MainGui.MainGui;
+ 
+MainGui.Text1.Name = "Text1";
+MainGui.Text1.LayoutOrder = 0;
+MainGui.Text1.TextWrapped = false;
+MainGui.Text1.LineHeight = 1;
+MainGui.Text1.Active = false;
+MainGui.Text1.TextStrokeTransparency = 1;
+MainGui.Text1.TextTruncate = Enum.TextTruncate.None;
+MainGui.Text1.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Text1.ZIndex = 1;
+MainGui.Text1.BorderSizePixel = 1;
+MainGui.Text1.RichText = false;
+MainGui.Text1.NextSelectionDown = nil;
+MainGui.Text1.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Text1.TextScaled = false;
+MainGui.Text1.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text1.BorderMode = Enum.BorderMode.Outline;
+MainGui.Text1.Selectable = false;
+MainGui.Text1.AnchorPoint = Vector2.new(0, 0);
+MainGui.Text1.NextSelectionRight = nil;
+MainGui.Text1.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Text1.Archivable = true;
+MainGui.Text1.Size = UDim2.new(0, 141, 0, 21);
+MainGui.Text1.TextTransparency = 0;
+MainGui.Text1.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Text1.TextSize = 14;
+MainGui.Text1.ClipsDescendants = false;
+MainGui.Text1.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Text1.Text = "(N-D)Kill aura keybind:";
+MainGui.Text1.TextColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text1.NextSelectionUp = nil;
+MainGui.Text1.Rotation = 0;
+MainGui.Text1.Font = Enum.Font.SourceSans;
+MainGui.Text1.SelectionImageObject = nil;
+MainGui.Text1.NextSelectionLeft = nil;
+MainGui.Text1.Visible = false;
+MainGui.Text1.Position = UDim2.new(0, 0, 0.046979863196611404, 0);
+MainGui.Text1.BackgroundTransparency = 1;
+MainGui.Text1.Parent = MainGui.MainFrame;
+ 
+MainGui.Text2.Name = "Text2";
+MainGui.Text2.LayoutOrder = 0;
+MainGui.Text2.TextWrapped = false;
+MainGui.Text2.LineHeight = 1;
+MainGui.Text2.Active = false;
+MainGui.Text2.TextStrokeTransparency = 1;
+MainGui.Text2.TextTruncate = Enum.TextTruncate.None;
+MainGui.Text2.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Text2.ZIndex = 1;
+MainGui.Text2.BorderSizePixel = 1;
+MainGui.Text2.RichText = false;
+MainGui.Text2.NextSelectionDown = nil;
+MainGui.Text2.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Text2.TextScaled = false;
+MainGui.Text2.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text2.BorderMode = Enum.BorderMode.Outline;
+MainGui.Text2.Selectable = false;
+MainGui.Text2.AnchorPoint = Vector2.new(0, 0);
+MainGui.Text2.NextSelectionRight = nil;
+MainGui.Text2.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Text2.Archivable = true;
+MainGui.Text2.Size = UDim2.new(0, 84, 0, 21);
+MainGui.Text2.TextTransparency = 0;
+MainGui.Text2.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Text2.TextSize = 14;
+MainGui.Text2.ClipsDescendants = false;
+MainGui.Text2.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Text2.Text = "(D)Kill aura keybind:";
+MainGui.Text2.TextColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text2.NextSelectionUp = nil;
+MainGui.Text2.Rotation = 0;
+MainGui.Text2.Font = Enum.Font.SourceSans;
+MainGui.Text2.SelectionImageObject = nil;
+MainGui.Text2.NextSelectionLeft = nil;
+MainGui.Text2.Visible = false;
+MainGui.Text2.Position = UDim2.new(0.09, 0, 0.13899999856948853, 0);
+MainGui.Text2.BackgroundTransparency = 1;
+MainGui.Text2.Parent = MainGui.MainFrame;
+ 
+MainGui.UICorner.Archivable = true;
+MainGui.UICorner.CornerRadius = UDim.new(0, 3);
+MainGui.UICorner.Parent = MainGui.MainFrame;
+ 
+MainGui.Text3.Name = "Text3";
+MainGui.Text3.LayoutOrder = 0;
+MainGui.Text3.TextWrapped = false;
+MainGui.Text3.LineHeight = 1;
+MainGui.Text3.Active = false;
+MainGui.Text3.TextStrokeTransparency = 1;
+MainGui.Text3.TextTruncate = Enum.TextTruncate.None;
+MainGui.Text3.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Text3.ZIndex = 1;
+MainGui.Text3.BorderSizePixel = 1;
+MainGui.Text3.RichText = false;
+MainGui.Text3.NextSelectionDown = nil;
+MainGui.Text3.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Text3.TextScaled = false;
+MainGui.Text3.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text3.BorderMode = Enum.BorderMode.Outline;
+MainGui.Text3.Selectable = false;
+MainGui.Text3.AnchorPoint = Vector2.new(0, 0);
+MainGui.Text3.NextSelectionRight = nil;
+MainGui.Text3.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Text3.Archivable = true;
+MainGui.Text3.Size = UDim2.new(0, 141, 0, 21);
+MainGui.Text3.TextTransparency = 0;
+MainGui.Text3.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Text3.TextSize = 14;
+MainGui.Text3.ClipsDescendants = false;
+MainGui.Text3.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Text3.Text = "Non-Dupe Kill aura:";
+MainGui.Text3.TextColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text3.NextSelectionUp = nil;
+MainGui.Text3.Rotation = 0;
+MainGui.Text3.Font = Enum.Font.SourceSans;
+MainGui.Text3.SelectionImageObject = nil;
+MainGui.Text3.NextSelectionLeft = nil;
+MainGui.Text3.Visible = false;
+MainGui.Text3.Position = UDim2.new(0, 0, 0.25843361020088196, 0);
+MainGui.Text3.BackgroundTransparency = 1;
+MainGui.Text3.Parent = MainGui.MainFrame;
+ 
+MainGui.Text4.Name = "Text4";
+MainGui.Text4.LayoutOrder = 0;
+MainGui.Text4.TextWrapped = false;
+MainGui.Text4.LineHeight = 1;
+MainGui.Text4.Active = false;
+MainGui.Text4.TextStrokeTransparency = 1;
+MainGui.Text4.TextTruncate = Enum.TextTruncate.None;
+MainGui.Text4.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Text4.ZIndex = 1;
+MainGui.Text4.BorderSizePixel = 1;
+MainGui.Text4.RichText = false;
+MainGui.Text4.NextSelectionDown = nil;
+MainGui.Text4.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Text4.TextScaled = false;
+MainGui.Text4.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text4.BorderMode = Enum.BorderMode.Outline;
+MainGui.Text4.Selectable = false;
+MainGui.Text4.AnchorPoint = Vector2.new(0, 0);
+MainGui.Text4.NextSelectionRight = nil;
+MainGui.Text4.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Text4.Archivable = true;
+MainGui.Text4.Size = UDim2.new(0, 84, 0, 21);
+MainGui.Text4.TextTransparency = 0;
+MainGui.Text4.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Text4.TextSize = 14;
+MainGui.Text4.ClipsDescendants = false;
+MainGui.Text4.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Text4.Text = "Dupe Kill aura:";
+MainGui.Text4.TextColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text4.NextSelectionUp = nil;
+MainGui.Text4.Rotation = 0;
+MainGui.Text4.Font = Enum.Font.SourceSans;
+MainGui.Text4.SelectionImageObject = nil;
+MainGui.Text4.NextSelectionLeft = nil;
+MainGui.Text4.Visible = false;
+MainGui.Text4.Position = UDim2.new(0.06800000369548798, 0, 0.35499998927116394, 0);
+MainGui.Text4.BackgroundTransparency = 1;
+MainGui.Text4.Parent = MainGui.MainFrame;
+ 
+MainGui.Box1.Name = "Box1";
+MainGui.Box1.LayoutOrder = 0;
+MainGui.Box1.CursorPosition = 1;
+MainGui.Box1.LineHeight = 1;
+MainGui.Box1.Active = false;
+MainGui.Box1.TextStrokeTransparency = 1;
+MainGui.Box1.SelectionStart = -1;
+MainGui.Box1.PlaceholderColor3 = Color3.fromRGB(178, 178, 178);
+MainGui.Box1.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Box1.ZIndex = 1;
+MainGui.Box1.BorderSizePixel = 1;
+MainGui.Box1.TextEditable = false;
+MainGui.Box1.RichText = false;
+MainGui.Box1.NextSelectionDown = nil;
+MainGui.Box1.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Box1.TextScaled = false;
+MainGui.Box1.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Box1.BorderMode = Enum.BorderMode.Outline;
+MainGui.Box1.Selectable = false;
+MainGui.Box1.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Box1.TextWrapped = false;
+MainGui.Box1.AnchorPoint = Vector2.new(0, 0);
+MainGui.Box1.TextTransparency = 0;
+MainGui.Box1.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Box1.TextSize = 14;
+MainGui.Box1.NextSelectionRight = nil;
+MainGui.Box1.PlaceholderText = "";
+MainGui.Box1.Archivable = true;
+MainGui.Box1.ShowNativeInput = true;
+MainGui.Box1.TextColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Box1.NextSelectionUp = nil;
+MainGui.Box1.Size = UDim2.new(0, 15, 0, 15);
+MainGui.Box1.ClipsDescendants = false;
+MainGui.Box1.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Box1.Text = "Z";
+MainGui.Box1.NextSelectionLeft = nil;
+MainGui.Box1.Visible = false;
+MainGui.Box1.Rotation = 0;
+MainGui.Box1.Font = Enum.Font.SourceSans;
+MainGui.Box1.SelectionImageObject = nil;
+MainGui.Box1.Position = UDim2.new(0.5447154641151428, 0, 0.05726872384548187, 0);
+MainGui.Box1.ClearTextOnFocus = true;
+MainGui.Box1.MultiLine = false;
+MainGui.Box1.BackgroundTransparency = 0;
+MainGui.Box1.Parent = MainGui.MainFrame;
+ 
+MainGui.Box2.Name = "Box2";
+MainGui.Box2.LayoutOrder = 0;
+MainGui.Box2.CursorPosition = 1;
+MainGui.Box2.LineHeight = 1;
+MainGui.Box2.Active = false;
+MainGui.Box2.TextStrokeTransparency = 1;
+MainGui.Box2.SelectionStart = -1;
+MainGui.Box2.PlaceholderColor3 = Color3.fromRGB(178, 178, 178);
+MainGui.Box2.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Box2.ZIndex = 1;
+MainGui.Box2.BorderSizePixel = 1;
+MainGui.Box2.TextEditable = false;
+MainGui.Box2.RichText = false;
+MainGui.Box2.NextSelectionDown = nil;
+MainGui.Box2.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Box2.TextScaled = false;
+MainGui.Box2.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Box2.BorderMode = Enum.BorderMode.Outline;
+MainGui.Box2.Selectable = false;
+MainGui.Box2.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Box2.TextWrapped = false;
+MainGui.Box2.AnchorPoint = Vector2.new(0, 0);
+MainGui.Box2.TextTransparency = 0;
+MainGui.Box2.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Box2.TextSize = 14;
+MainGui.Box2.NextSelectionRight = nil;
+MainGui.Box2.PlaceholderText = "";
+MainGui.Box2.Archivable = true;
+MainGui.Box2.ShowNativeInput = true;
+MainGui.Box2.TextColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Box2.NextSelectionUp = nil;
+MainGui.Box2.Size = UDim2.new(0, 15, 0, 15);
+MainGui.Box2.ClipsDescendants = false;
+MainGui.Box2.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Box2.Text = "X";
+MainGui.Box2.NextSelectionLeft = nil;
+MainGui.Box2.Visible = false;
+MainGui.Box2.Rotation = 0;
+MainGui.Box2.Font = Enum.Font.SourceSans;
+MainGui.Box2.SelectionImageObject = nil;
+MainGui.Box2.Position = UDim2.new(0.5447154641151428, 0, 0.14977973699569702, 0);
+MainGui.Box2.ClearTextOnFocus = true;
+MainGui.Box2.MultiLine = false;
+MainGui.Box2.BackgroundTransparency = 0;
+MainGui.Box2.Parent = MainGui.MainFrame;
+ 
+MainGui.Text5.Name = "Text5";
+MainGui.Text5.LayoutOrder = 0;
+MainGui.Text5.TextWrapped = false;
+MainGui.Text5.LineHeight = 1;
+MainGui.Text5.Active = false;
+MainGui.Text5.TextStrokeTransparency = 1;
+MainGui.Text5.TextTruncate = Enum.TextTruncate.None;
+MainGui.Text5.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Text5.ZIndex = 1;
+MainGui.Text5.BorderSizePixel = 1;
+MainGui.Text5.RichText = false;
+MainGui.Text5.NextSelectionDown = nil;
+MainGui.Text5.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Text5.TextScaled = false;
+MainGui.Text5.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text5.BorderMode = Enum.BorderMode.Outline;
+MainGui.Text5.Selectable = false;
+MainGui.Text5.AnchorPoint = Vector2.new(0, 0);
+MainGui.Text5.NextSelectionRight = nil;
+MainGui.Text5.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Text5.Archivable = true;
+MainGui.Text5.Size = UDim2.new(0, 33, 0, 21);
+MainGui.Text5.TextTransparency = 0;
+MainGui.Text5.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Text5.TextSize = 14;
+MainGui.Text5.ClipsDescendants = false;
+MainGui.Text5.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Text5.Text = "false";
+MainGui.Text5.TextColor3 = Color3.fromRGB(255, 0, 0);
+MainGui.Text5.NextSelectionUp = nil;
+MainGui.Text5.Rotation = 0;
+MainGui.Text5.Font = Enum.Font.SourceSans;
+MainGui.Text5.SelectionImageObject = nil;
+MainGui.Text5.NextSelectionLeft = nil;
+MainGui.Text5.Visible = false;
+MainGui.Text5.Position = UDim2.new(0.5081300735473633, 0, 0.25843361020088196, 0);
+MainGui.Text5.BackgroundTransparency = 1;
+MainGui.Text5.Parent = MainGui.MainFrame;
+ 
+MainGui.Text6.Name = "Text6";
+MainGui.Text6.LayoutOrder = 0;
+MainGui.Text6.TextWrapped = false;
+MainGui.Text6.LineHeight = 1;
+MainGui.Text6.Active = false;
+MainGui.Text6.TextStrokeTransparency = 1;
+MainGui.Text6.TextTruncate = Enum.TextTruncate.None;
+MainGui.Text6.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Text6.ZIndex = 1;
+MainGui.Text6.BorderSizePixel = 1;
+MainGui.Text6.RichText = false;
+MainGui.Text6.NextSelectionDown = nil;
+MainGui.Text6.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Text6.TextScaled = false;
+MainGui.Text6.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Text6.BorderMode = Enum.BorderMode.Outline;
+MainGui.Text6.Selectable = false;
+MainGui.Text6.AnchorPoint = Vector2.new(0, 0);
+MainGui.Text6.NextSelectionRight = nil;
+MainGui.Text6.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Text6.Archivable = true;
+MainGui.Text6.Size = UDim2.new(0, 33, 0, 21);
+MainGui.Text6.TextTransparency = 0;
+MainGui.Text6.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Text6.TextSize = 14;
+MainGui.Text6.ClipsDescendants = false;
+MainGui.Text6.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Text6.Text = "false";
+MainGui.Text6.TextColor3 = Color3.fromRGB(255, 0, 0);
+MainGui.Text6.NextSelectionUp = nil;
+MainGui.Text6.Rotation = 0;
+MainGui.Text6.Font = Enum.Font.SourceSans;
+MainGui.Text6.SelectionImageObject = nil;
+MainGui.Text6.NextSelectionLeft = nil;
+MainGui.Text6.Visible = false;
+MainGui.Text6.Position = UDim2.new(0.5081300735473633, 0, 0.3509446382522583, 0);
+MainGui.Text6.BackgroundTransparency = 1;
+MainGui.Text6.Parent = MainGui.MainFrame;
+ 
+MainGui.Button1.Name = "Button1";
+MainGui.Button1.LayoutOrder = 0;
+MainGui.Button1.TextWrapped = false;
+MainGui.Button1.LineHeight = 1;
+MainGui.Button1.Active = true;
+MainGui.Button1.TextStrokeTransparency = 1;
+MainGui.Button1.TextTruncate = Enum.TextTruncate.None;
+MainGui.Button1.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Button1.ZIndex = 1;
+MainGui.Button1.BorderSizePixel = 1;
+MainGui.Button1.RichText = false;
+MainGui.Button1.Modal = false;
+MainGui.Button1.AutoButtonColor = true;
+MainGui.Button1.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Button1.TextScaled = false;
+MainGui.Button1.BackgroundColor3 = Color3.fromRGB(45, 45, 45);
+MainGui.Button1.BorderMode = Enum.BorderMode.Outline;
+MainGui.Button1.Selectable = true;
+MainGui.Button1.AnchorPoint = Vector2.new(0, 0);
+MainGui.Button1.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Button1.TextTransparency = 0;
+MainGui.Button1.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Button1.NextSelectionRight = nil;
+MainGui.Button1.Selected = false;
+MainGui.Button1.Archivable = true;
+MainGui.Button1.Size = UDim2.new(0, 200, 0, 32);
+MainGui.Button1.TextSize = 14;
+MainGui.Button1.TextColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Button1.NextSelectionDown = nil;
+MainGui.Button1.ClipsDescendants = false;
+MainGui.Button1.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Button1.Text = "c4 c4 c4!!!";
+MainGui.Button1.NextSelectionUp = nil;
+MainGui.Button1.NextSelectionLeft = nil;
+MainGui.Button1.Rotation = 0;
+MainGui.Button1.Font = Enum.Font.SourceSans;
+MainGui.Button1.SelectionImageObject = nil;
+MainGui.Button1.Visible = true;
+MainGui.Button1.Style = Enum.ButtonStyle.Custom;
+MainGui.Button1.Position = UDim2.new(0.0934959352016449, 0, 0.634361207485199, 0);
+MainGui.Button1.BackgroundTransparency = 0;
+MainGui.Button1.Parent = MainGui.MainFrame;
+ 
+MainGui.UICorner_2.Archivable = true;
+MainGui.UICorner_2.CornerRadius = UDim.new(0, 8);
+MainGui.UICorner_2.Parent = MainGui.Button1;
+ 
+MainGui.Box3.Name = "Box3";
+MainGui.Box3.LayoutOrder = 0;
+MainGui.Box3.CursorPosition = 1;
+MainGui.Box3.LineHeight = 1;
+MainGui.Box3.Active = false;
+MainGui.Box3.TextStrokeTransparency = 1;
+MainGui.Box3.SelectionStart = -1;
+MainGui.Box3.PlaceholderColor3 = Color3.fromRGB(178, 178, 178);
+MainGui.Box3.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Box3.ZIndex = 1;
+MainGui.Box3.BorderSizePixel = 1;
+MainGui.Box3.TextEditable = false;
+MainGui.Box3.RichText = false;
+MainGui.Box3.NextSelectionDown = nil;
+MainGui.Box3.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Box3.TextScaled = false;
+MainGui.Box3.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Box3.BorderMode = Enum.BorderMode.Outline;
+MainGui.Box3.Selectable = true;
+MainGui.Box3.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Box3.TextWrapped = false;
+MainGui.Box3.AnchorPoint = Vector2.new(0, 0);
+MainGui.Box3.TextTransparency = 0;
+MainGui.Box3.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Box3.TextSize = 14;
+MainGui.Box3.NextSelectionRight = nil;
+MainGui.Box3.PlaceholderText = "Weapon Id (1-47)";
+MainGui.Box3.Archivable = true;
+MainGui.Box3.ShowNativeInput = true;
+MainGui.Box3.TextColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Box3.NextSelectionUp = nil;
+MainGui.Box3.Size = UDim2.new(0, 87, 0, 15);
+MainGui.Box3.ClipsDescendants = false;
+MainGui.Box3.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Box3.Text = "";
+MainGui.Box3.NextSelectionLeft = nil;
+MainGui.Box3.Visible = false;
+MainGui.Box3.Rotation = 0;
+MainGui.Box3.Font = Enum.Font.SourceSans;
+MainGui.Box3.SelectionImageObject = nil;
+MainGui.Box3.Position = UDim2.new(0.11788620799779892, 0, 0.5286343693733215, 0);
+MainGui.Box3.ClearTextOnFocus = true;
+MainGui.Box3.MultiLine = false;
+MainGui.Box3.BackgroundTransparency = 0;
+MainGui.Box3.Parent = MainGui.MainFrame;
+ 
+MainGui.Box4.Name = "Box4";
+MainGui.Box4.LayoutOrder = 0;
+MainGui.Box4.CursorPosition = 1;
+MainGui.Box4.LineHeight = 1;
+MainGui.Box4.Active = true;
+MainGui.Box4.TextStrokeTransparency = 1;
+MainGui.Box4.SelectionStart = -1;
+MainGui.Box4.PlaceholderColor3 = Color3.fromRGB(178, 178, 178);
+MainGui.Box4.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Box4.ZIndex = 1;
+MainGui.Box4.BorderSizePixel = 1;
+MainGui.Box4.TextEditable = true;
+MainGui.Box4.RichText = false;
+MainGui.Box4.NextSelectionDown = nil;
+MainGui.Box4.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Box4.TextScaled = false;
+MainGui.Box4.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Box4.BorderMode = Enum.BorderMode.Outline;
+MainGui.Box4.Selectable = true;
+MainGui.Box4.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Box4.TextWrapped = true;
+MainGui.Box4.AnchorPoint = Vector2.new(0, 0);
+MainGui.Box4.TextTransparency = 0;
+MainGui.Box4.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Box4.TextSize = 14;
+MainGui.Box4.NextSelectionRight = nil;
+MainGui.Box4.PlaceholderText = "i recomend 150.";
+MainGui.Box4.Archivable = true;
+MainGui.Box4.ShowNativeInput = true;
+MainGui.Box4.TextColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Box4.NextSelectionUp = nil;
+MainGui.Box4.Size = UDim2.new(0, 87, 0, 15);
+MainGui.Box4.ClipsDescendants = false;
+MainGui.Box4.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Box4.Text = "";
+MainGui.Box4.NextSelectionLeft = nil;
+MainGui.Box4.Visible = true;
+MainGui.Box4.Rotation = 0;
+MainGui.Box4.Font = Enum.Font.SourceSans;
+MainGui.Box4.SelectionImageObject = nil;
+MainGui.Box4.Position = UDim2.new(0.333, 0, 0.5286343693733290, 0);
+MainGui.Box4.ClearTextOnFocus = true;
+MainGui.Box4.MultiLine = false;
+MainGui.Box4.BackgroundTransparency = 0;
+MainGui.Box4.Parent = MainGui.MainFrame;
+ 
+MainGui.Invite.Name = "Invite";
+MainGui.Invite.LayoutOrder = 0;
+MainGui.Invite.CursorPosition = 1;
+MainGui.Invite.LineHeight = 1;
+MainGui.Invite.Active = true;
+MainGui.Invite.TextStrokeTransparency = 1;
+MainGui.Invite.SelectionStart = -1;
+MainGui.Invite.PlaceholderColor3 = Color3.fromRGB(178, 178, 178);
+MainGui.Invite.SizeConstraint = Enum.SizeConstraint.RelativeXY;
+MainGui.Invite.ZIndex = 1;
+MainGui.Invite.BorderSizePixel = 1;
+MainGui.Invite.TextEditable = false;
+MainGui.Invite.RichText = false;
+MainGui.Invite.NextSelectionDown = nil;
+MainGui.Invite.TextYAlignment = Enum.TextYAlignment.Center;
+MainGui.Invite.TextScaled = false;
+MainGui.Invite.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+MainGui.Invite.BorderMode = Enum.BorderMode.Outline;
+MainGui.Invite.Selectable = true;
+MainGui.Invite.TextXAlignment = Enum.TextXAlignment.Center;
+MainGui.Invite.TextWrapped = true;
+MainGui.Invite.AnchorPoint = Vector2.new(0, 0);
+MainGui.Invite.TextTransparency = 0;
+MainGui.Invite.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Invite.TextSize = 14;
+MainGui.Invite.NextSelectionRight = nil;
+MainGui.Invite.PlaceholderText = "To dupe (10-50)";
+MainGui.Invite.Archivable = true;
+MainGui.Invite.ShowNativeInput = true;
+MainGui.Invite.TextColor3 = Color3.fromRGB(0, 0, 0);
+MainGui.Invite.NextSelectionUp = nil;
+MainGui.Invite.Size = UDim2.new(0, 227, 0, 15);
+MainGui.Invite.ClipsDescendants = false;
+MainGui.Invite.BorderColor3 = Color3.fromRGB(27, 42, 53);
+MainGui.Invite.Text = ":";
+MainGui.Invite.NextSelectionLeft = nil;
+MainGui.Invite.Visible = true;
+MainGui.Invite.Rotation = 0;
+MainGui.Invite.Font = Enum.Font.SourceSans;
+MainGui.Invite.SelectionImageObject = nil;
+MainGui.Invite.Position = UDim2.new(0.03658536821603775, 0, 0.9030836820602417, 0);
+MainGui.Invite.ClearTextOnFocus = false;
+MainGui.Invite.MultiLine = false;
+MainGui.Invite.BackgroundTransparency = 0;
+MainGui.Invite.Parent = MainGui.MainFrame;
+ 
+-- epic ui stroke giver
+ 
+for i,v in pairs(MainGui) do
+	if v:IsA("TextBox") then
+	else
+		if v:IsA("Frame") or v:IsA("TextButton") then
+			local uistroke = Instance.new("UIStroke")
+			if v:IsA("TextButton") then
+				uistroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			else
+				uistroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+			end
+			uistroke.Color = Color3.fromRGB(0,0,0)
+			uistroke.Thickness = 2
+			uistroke.Transparency = 0
+			uistroke.Parent = v
+			if v:IsA("Frame") then
+				coroutine.wrap(function()
+					while wait() do
+						uistroke.Color = Color3.fromHSV(tick() % 3/3,1,1)
+					end
+				end)()
+			end
+		elseif v:IsA("TextLabel") then
+			local uistroke = Instance.new("UIStroke")
+			uistroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+			uistroke.LineJoinMode = Enum.LineJoinMode.Round
+			uistroke.Color = Color3.fromRGB(0,0,0)
+			uistroke.Thickness = 1
+			uistroke.Transparency = 0
+			uistroke.Parent = v
+		end
+	end
+end
+ 
+ 
+ 
+local nondupe = false
+local dupe = false
+local ToDupe = 0
+local WeaponId = 0
+local Players = game:GetService("Players")
+local plr = Players.LocalPlayer
+local UIS = game:GetService("UserInputService")
+ 
+local function GetClosest() -- devforum getclosest :sob:
+    local Character = plr.Character
+    local HumanoidRootPart = Character and Character:FindFirstChild("HumanoidRootPart")
+    if not (Character or HumanoidRootPart) then return end
+ 
+    local TargetDistance = math.huge
+    local Target
+ 
+    for i,v in ipairs(Players:GetPlayers()) do
+        if v ~= plr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+            local TargetHRP = v.Character.HumanoidRootPart
+            local mag = (HumanoidRootPart.Position - TargetHRP.Position).magnitude
+            if mag < TargetDistance then
+                TargetDistance = mag
+                Target = v
+            end
+        end
+    end
+ 
+    return Target
+end
+ 
+UIS.InputBegan:Connect(function(K,J)
+	if J then return end
+	K = K.KeyCode
+	if K == Enum.KeyCode[Keybind1:upper()] then
+	    if nondupe == false then
+		    nondupe = true
+		else
+		    nondupe = false
+	    end
+	    print(nondupe)
+		if nondupe then
+			MainGui.Text5.Text = "true"
+			MainGui.Text5.TextColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			MainGui.Text5.Text = "false"
+			MainGui.Text5.TextColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+	if K == Enum.KeyCode[Keybind2:upper()] then
+		if dupe == false then
+		    dupe = true
+		else
+		    dupe = false
+		end
+		print(dupe)
+		if dupe then
+			MainGui.Text6.Text = "true"
+			MainGui.Text6.TextColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			MainGui.Text6.Text = "false"
+			MainGui.Text6.TextColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+end)
+ 
+MainGui.Button1.MouseButton1Down:Connect(function()
+	if ToDupe == 0 then
+		ToDupe = 10
+	end
+	if WeaponId == 0 then
+		WeaponId = 2
+	end
+	local dupe1 = {}
+ 
+	for i=1,ToDupe do table.insert(dupe1,tonumber(WeaponId)) end
+ 
+	settings().Network.IncomingReplicationLag = math.huge
+	task.wait()
+	for i,v in pairs(dupe1) do
+   		local h = v
+ 
+   		local args = {
+       		[1] = h,
+       		[2] = "0:0:0:0"
+		}
+		game:GetService("ReplicatedStorage").Item:FireServer(unpack(args))
+	end
+	task.wait(0.5)
+	settings().Network.IncomingReplicationLag = 0
+	task.wait(#dupe1/19)
+	for i,v in pairs(plr.Backpack:GetChildren()) do
+		if i == 4 then
+			MainGui.Button1.Text = "Dupe failed."
+			wait(2)
+			MainGui.Button1.Text = "Dupe weapon"
+		end
+   		if v.Name == "Katana" or v.Name == "Fire bomb" or v.Name == "Grenade" or v.Name == "Bear trap" then
+       		v:Destroy()
+   		end
+	end
+end)
+ 
+MainGui.Box3:GetPropertyChangedSignal("Text"):Connect(function()
+	if MainGui.Box3.Text ~= 0 then
+		WeaponId = tonumber(MainGui.Box3.Text)
+	end
+end)
+ 
+MainGui.Box4:GetPropertyChangedSignal("Text"):Connect(function()
+	if MainGui.Box4.Text ~= 0 then
+		ToDupe = tonumber(MainGui.Box4.Text)
+	end
+end)
+ 
+-- Non-dupe
+ 
+coroutine.wrap(function()
+	while wait() do
+	    if nondupe then
+		    pcall(function()
+			    for i,v in pairs(plr.Character:GetDescendants()) do
+            	    if v:IsA("RemoteEvent") and v.Name == "hit" then
+                	    v.Parent.swing:FireServer()
+               		    v:FireServer(GetClosest().Character.Humanoid)
+            	    end
+			    end
+		    end)
+	    end
+	    if Keybind1:lower() == Keybind2:lower() then -- putting it here because no wait and i dont wanna make another while wait() do
+			Keybind1 = "Z"
+			Keybind2 = "X"
+			MainGui.Box1.Text = "Z"
+			MainGui.Box2.Text = "X"
+	    end
+	end
+end)()
+ 
+-- Dupe
+ 
+coroutine.wrap(function()
+	while wait(0.09) do
+	    if dupe then
+    	    pcall(function()
+        	    for i,v in pairs(plr.Backpack:GetChildren()) do
+           		    if v:IsA'Tool' and v.Name == "C4" or v.Name == "Grenade" or v.Name == "Fire bomb" or v.Name == "Beartrap" then
+            	    else
+                	    if v:IsA'Tool' then
+                		    plr.Character.Humanoid:EquipTool(v)
+                		    v.swing:FireServer()
+                		    v.hit:FireServer(GetClosest().Character.Humanoid)
+                	    end
+            	    end
+        	    end
+    	    end)
+	    end
+	end
+end)()
+ 
+ 
+local key = game:GetService("UserInputService")
+ 
+key.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Z then
+		local tool = "C4"
+ 
+for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and v.Name == tool then
+v.Parent = game:GetService("Players").LocalPlayer.Character
+if v.Name == tool then
+v:Activate()
+end
+end
+end
+ 
+	end
+end)
